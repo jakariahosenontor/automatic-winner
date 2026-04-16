@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zorobet | Fun Sports & Aviator Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Zorobet</h1>
+      <p class="tagline">Demo betting-style entertainment platform</p>
+    </div>
+    <div class="wallet-box">
+      <span>Wallet:</span>
+      <strong id="walletAmount">1000.00</strong>
+      <button id="addFundsBtn">+100</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <h2>Aviator (Demo)</h2>
+      <p>Enter stake, launch flight, and cash out before crash.</p>
+      <div class="aviator-row">
+        <label>
+          Stake
+          <input id="aviatorStake" type="number" min="1" value="20" />
+        </label>
+        <button id="startAviatorBtn">Start</button>
+        <button id="cashOutBtn" disabled>Cash Out</button>
+      </div>
+      <div class="aviator-meter">
+        <span>Multiplier:</span>
+        <strong id="multiplierDisplay">1.00x</strong>
+      </div>
+      <p id="aviatorStatus" class="status">Ready to fly.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Quick Bet Slip</h2>
+      <label>
+        Selected Match
+        <input id="selectedMatch" type="text" readonly value="No match selected" />
+      </label>
+      <label>
+        Pick
+        <select id="selectedPick">
+          <option value="home">Home Win</option>
+          <option value="away">Away Win</option>
+          <option value="draw">Draw</option>
+        </select>
+      </label>
+      <label>
+        Stake
+        <input id="betStake" type="number" min="1" value="10" />
+      </label>
+      <button id="placeBetBtn">Place Bet</button>
+      <p id="betStatus" class="status">Choose a match below to begin.</p>
+    </section>
+
+    <section class="panel matches-panel">
+      <div class="matches-header">
+        <h2>Live Matches (50)</h2>
+        <input id="searchInput" type="search" placeholder="Search teams..." />
+      </div>
+      <div id="matchesGrid" class="matches-grid"></div>
+    </section>
+  </main>
+
+  <template id="matchCardTemplate">
+    <article class="match-card">
+      <h3 class="teams"></h3>
+      <p class="meta"></p>
+      <div class="odds-row">
+        <button data-pick="home"></button>
+        <button data-pick="draw"></button>
+        <button data-pick="away"></button>
+      </div>
+      <button class="select-btn">Use in Bet Slip</button>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
